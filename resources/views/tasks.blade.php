@@ -1,18 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Tasks</div>
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+@section('my_content')
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand">Welcome, {{ Auth::user()->name }} </a>
+                <button class="btn btn-outline-success" type="submit">Add New Task</button><div style="padding-right: 10px"></div>
+                <button class="btn btn-outline-dark" type="submit">Archive</button><div style="padding-right: 10px"></div>
+                <button class="btn btn-outline-secondary" type="submit">Logout</button>
+            </nav>
+        </div>
+
+        <div class="row">
 
                             <table class="table border table-white">
                                 <thead>
@@ -21,6 +22,8 @@
                                     <th scope="col">Title</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Created</th>
+                                    <th scope="col">Done</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -28,23 +31,27 @@
 
                                 @if($zadanie->status == 0)
                                     <tr style="background: whitesmoke">
+                                        <th scope="row">{{ $zadanie->id }}</th>
+                                        <td>{{ $zadanie->title }}</td>
+                                        <td>{{ $zadanie->description }}</td>
+                                        <td>{{ $zadanie->created_at }}</td>
+                                        <td><button type="button" href="#" class="btn btn-success">Done</button></td>
+                                        <td><button type="button" href="#" class="btn btn-danger">Delete</button></td>
+                                    </tr>
                                 @else
                                     <tr style="background: lightgreen">
+                                        <th scope="row">{{ $zadanie->id }}</th>
+                                        <td>{{ $zadanie->title }}</td>
+                                        <td>{{ $zadanie->description }}</td>
+                                        <td>{{ $zadanie->created_at }}</td>
+                                        <td><button type="button" href="#" class="btn btn-secondary">Back</button></td>
+                                        <td><button type="button" href="#" class="btn btn-danger">Delete</button></td>
+                                    </tr>
                                 @endif
-                                    <th scope="row">{{ $zadanie->id }}</th>
-                                    <td>{{ $zadanie->title }}</td>
-                                    <td>{{ $zadanie->description }}</td>
-                                    <td>{{ $zadanie->created_at }}</td>
-                                </tr>
+
                             @endforeach
                                 </tbody>
                             </table>
-
-
-
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
+</div>
 @endsection
