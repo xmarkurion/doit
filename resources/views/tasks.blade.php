@@ -23,7 +23,7 @@
                                     <th scope="col">Description</th>
                                     <th scope="col">Created</th>
                                     <th scope="col">Done</th>
-                                    <th scope="col">Delete</th>
+                                    <th scope="col">Archive</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -36,7 +36,7 @@
                                         <td>{{ $zadanie->description }}</td>
                                         <td>{{ $zadanie->created_at }}</td>
                                         <td><button type="button" href="#" class="btn btn-success">Done</button></td>
-                                        <td><button type="button" href="#" class="btn btn-danger">Delete</button></td>
+                                        <td><button type="button" href="#" class="btn btn-danger">Archive</button></td>
                                     </tr>
                                 @else
                                     <tr style="background: lightgreen">
@@ -45,7 +45,7 @@
                                         <td>{{ $zadanie->description }}</td>
                                         <td>{{ $zadanie->created_at }}</td>
                                         <td><button type="button" href="#" class="btn btn-secondary">Back</button></td>
-                                        <td><button type="button" href="#" class="btn btn-danger">Delete</button></td>
+                                        <td><button type="button" href="#" class="btn btn-danger">Archive</button></td>
                                     </tr>
                                 @endif
 

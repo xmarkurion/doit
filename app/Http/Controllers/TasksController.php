@@ -13,4 +13,10 @@ class TasksController extends Controller
 
         return view('tasks', ['zadania'=> $zadania]);
     }
+
+    public function add()
+    {
+
+        return view('add');
+    }
 }
