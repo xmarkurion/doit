@@ -19,6 +19,7 @@ class CreateTasksTable extends Migration
             $table->integer('parent_id');
             $table->text('title');
             $table->text('description');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

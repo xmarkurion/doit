@@ -1,3 +1,7 @@
+To restore after git lone use: 
+<li>1. composer update --no-scripts</li>
+<li>2. php artisan key:generate </li>
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
