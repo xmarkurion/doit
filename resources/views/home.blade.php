@@ -14,7 +14,6 @@
                         </div>
                     @endif
 
-                    You are logged in!
 
                     @foreach($tasks as $task)
                         <li> {{ $task }}</li>
