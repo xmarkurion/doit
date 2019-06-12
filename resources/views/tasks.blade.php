@@ -3,13 +3,15 @@
 
 @section('my_content')
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-light bg-light" style="width: 100%; display: block !important;">
+
                 <a class="navbar-brand">Welcome, {{ Auth::user()->name }} </a>
-                <a href="{{ url('/tasks/add/') }}"><button class="btn btn-outline-success" type="button">Add New Task</button></a><div style="padding-right: 10px"></div>
-                <button class="btn btn-outline-dark" type="button">Archive</button><div style="padding-right: 10px"></div>
-                <a href="{{ route('logout') }}" style="" class=""><button class="btn btn-outline-secondary" type="button">Logout</button></a>
+                <a href="{{ url('/tasks/add/') }}"><button class="btn btn-outline-success" type="button" style="padding-right: 10px">Add New Task</button></a>
+                <button class="btn btn-outline-dark" type="button" style="padding-right: 10px">Archive</button>
+                <a href="{{ route('logout') }}" class=""><button style="margin-top: 5px;" class="btn btn-outline-secondary float-right" type="button">Logout</button></a>
+
             </nav>
         </div>
 
