@@ -8,7 +8,8 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="padding-top: 10px;">
-            <form class="was-validated">
+            <form class="was-validated" method="post" action="/tasks/add">
+                {{ csrf_field() }}
                 <div>
                     <input name="title" type="text" class="form-control" id="inputPassword" placeholder="Please enter a title" required>
                 </div>
@@ -20,7 +21,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-large btn-block btn-primary">SAVE</button>
-                <button type="submit" class="btn btn-large btn-block btn-secondary">Cancel</button>
+                <a href="{{ url('/tasks') }}" <button type="submit" class="btn btn-large btn-block btn-secondary">Cancel</button></a>
             </form>
              <div class="col-md-2"></div>
         </div>
