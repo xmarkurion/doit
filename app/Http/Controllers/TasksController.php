@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 use Illuminate\Support\Facades\Auth;
 
+use App\Tasks;
+
 class TasksController extends Controller
 {
-    public function tasks()
+    public function index()
     {
-        $zadania = \App\Tasks::all();
+        //$zadania = \App\Tasks::all();
+        $zadania = Tasks::all();
 
-
-        return view('tasks', ['zadania'=> $zadania]);
+        //return view('tasks', ['zadania'=> $zadania]);
+        return view('tasks', compact('zadania'));
     }
 
     public function add()
@@ -32,5 +35,12 @@ class TasksController extends Controller
         $zadanie->save();
 
         return redirect('/tasks');
+    }
+
+    public function edit($id)
+    {
+
+        $zadanie = Tasks::find($id);
+        return view('edit', compact('zadanie'));
     }
 }
