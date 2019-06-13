@@ -54,6 +54,22 @@ class TasksController extends Controller
         return redirect('tasks');
     }
 
+    public function done($id)
+    {
+        $zadanie = Tasks::findOrFail($id);
+        $zadanie->status = true;
+        $zadanie->save();
+        return redirect('/tasks');
+    }
+
+    public function undone($id)
+    {
+        $zadanie = Tasks::findOrFail($id);
+        $zadanie->status = false;
+        $zadanie->save();
+        return redirect('/tasks');
+    }
+
     public function destroy($id)
     {
         Tasks::findOrFail($id)->delete();

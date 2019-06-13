@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('tasks','TasksController');
+Route::any('tasks/{task}/done', 'TasksController@done')->name('tasks.done');
+Route::any('tasks/{task}/undone', 'TasksController@undone')->name('tasks.undone');
 /*
 Route::get('/tasks', "TasksController@tasks")->name('tasks');
 Route::get('/tasks/add', "TasksController@add")->name('add');

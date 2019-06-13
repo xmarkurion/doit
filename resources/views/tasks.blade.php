@@ -38,7 +38,7 @@
                                         <td>{{ $zadanie->description }}</td>
                                         <td>{{ $zadanie->created_at }}</td>
                                         <td><a href="{{ url('tasks') }}/{{ $zadanie->id }}/edit"><button type="button" class="btn btn-info">Edit</button></a></td>
-                                        <td><button type="button" href="#" class="btn btn-success">Done</button></td>
+                                        <td><a href="{{ url('tasks') }}/{{ $zadanie->id }}/done"><button type="button" href="#" class="btn btn-success">Done</button></a></td>
                                     </tr>
                                 @else
                                     <tr style="background: lightgreen">
@@ -47,7 +47,7 @@
                                         <td>{{ $zadanie->description }}</td>
                                         <td>{{ $zadanie->created_at }}</td>
                                         <td><a href="{{ url('tasks') }}/{{ $zadanie->id }}/edit"><button type="button" class="btn btn-info">Edit</button></a></td>
-                                        <td><button type="button" class="btn btn-secondary">Back</button></td>
+                                        <td><a href="{{ url('tasks') }}/{{ $zadanie->id }}/undone"><button type="button" class="btn btn-secondary">Back</button></a></td>
                                     </tr>
                                 @endif
 
