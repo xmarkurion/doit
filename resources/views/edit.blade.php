@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="padding-top: 10px;">
-                <form class="was-validated" method="post" action="/tasks/add">
-                    {{ csrf_field() }}
-
+                <form class="was-validated" method="post" action="/tasks/{{ $zadanie->id }}">
+                    @method('PATCH')
+                    @csrf
 
                     <div>
                         <input name="title" type="text" class="form-control" id="inputPassword" value="{{ $zadanie->title }}" required>
@@ -24,7 +24,15 @@
 
                     <button type="submit" class="btn btn-large btn-block btn-primary">EDIT</button>
                     <a href="{{ url('/tasks') }}" <button type="submit" class="btn btn-large btn-block btn-secondary">Cancel</button></a>
+                    <div style="padding-bottom: 5px;"></div>
                 </form>
+
+                <form class="was-validated" method="post" action="/tasks/{{ $zadanie->id }}">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-large btn-block btn-danger">DELETE</button>
+                </form>
+
                 <div class="col-md-2"></div>
             </div>
         </div>

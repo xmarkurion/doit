@@ -13,15 +13,51 @@ class TasksController extends Controller
     public function index()
     {
         //$zadania = \App\Tasks::all();
-        $zadania = Tasks::all();
-
         //return view('tasks', ['zadania'=> $zadania]);
+
+        $zadania = Tasks::all();
         return view('tasks', compact('zadania'));
     }
 
-    public function add()
+
+
+    public function create()
     {
         return view('add');
+    }
+
+    public function edit($id)
+    {
+        $zadanie = Tasks::findOrFail($id);
+
+        $live_user = Auth::id();
+        $task_user = $zadanie->user_id;
+
+        if($live_user==$task_user)
+        {
+            return view('edit', compact('zadanie'));
+        }
+        else // if user will try to edit not his task...
+        {
+            return redirect('/tasks');
+        }
+
+    }
+
+    public function update($id)
+    {
+        $zadanie = Tasks::findOrFail($id);
+        $zadanie->title = request('title');
+        $zadanie->description = request('description');
+        $zadanie->save();
+
+        return redirect('tasks');
+    }
+
+    public function destroy($id)
+    {
+        Tasks::findOrFail($id)->delete();
+        return redirect('/tasks');
     }
 
     public function store()
@@ -37,10 +73,5 @@ class TasksController extends Controller
         return redirect('/tasks');
     }
 
-    public function edit($id)
-    {
 
-        $zadanie = Tasks::find($id);
-        return view('edit', compact('zadanie'));
-    }
 }

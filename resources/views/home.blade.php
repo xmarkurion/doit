@@ -14,8 +14,9 @@
                         </div>
                     @endif
 
+                        <li><a href="{{ url('/tasks')  }}">Enter Tasks</a> </li>
 
-                    @foreach($tasks as $task)
+                        @foreach($tasks as $task)
                         <li> {{ $task }}</li>
                         @endforeach
 

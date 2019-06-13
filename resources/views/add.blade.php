@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="padding-top: 10px;">
-            <form class="was-validated" method="post" action="/tasks/add">
+            <form class="was-validated" method="post" action="/tasks">
                 {{ csrf_field() }}
                 <div>
                     <input name="title" type="text" class="form-control" id="inputPassword" placeholder="Please enter a title" required>
