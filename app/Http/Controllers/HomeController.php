@@ -23,14 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tasks = [
-            'Play with sommenoe fainly',
-            'learn laraver',
-            'Become frontman, endman'
-        ];
 
-        return view('home')->with([
-            'tasks' => $tasks,
-        ]);
+        return view('home');
     }
 }

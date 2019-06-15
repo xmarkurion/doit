@@ -10,6 +10,12 @@ use App\Tasks;
 
 class TasksController extends Controller
 {
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
     public function index()
     {
         //$zadania = \App\Tasks::all();

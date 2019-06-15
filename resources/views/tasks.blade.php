@@ -9,8 +9,7 @@
 
                 <a class="navbar-brand">Welcome, {{ Auth::user()->name }} </a>
                 <a href="{{ url('/tasks/create') }}"><button class="btn btn-outline-success" type="button" style="padding-right: 10px">Add New Task</button></a>
-                <button class="btn btn-outline-dark" type="button" style="padding-right: 10px">Archive</button>
-                <a href="{{ route('logout') }}" class=""><button style="margin-top: 5px;" class="btn btn-outline-secondary float-right" type="button">Logout</button></a>
+                <a href="{{ route('tasks.logout') }}"><button style="margin-top: 5px;" class="btn btn-outline-secondary float-right" type="button">Logout</button></a>
 
             </nav>
         </div>
