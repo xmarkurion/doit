@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/huj', function () {
+Route::get('/moj', function () {
     return view('welcome');
 });
 

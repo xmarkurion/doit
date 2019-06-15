@@ -13,10 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                         <li><a href="{{ url('/tasks')  }}">Enter Tasks</a> </li>
-
-
                 </div>
             </div>
         </div>
